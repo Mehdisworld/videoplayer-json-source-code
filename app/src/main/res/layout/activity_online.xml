@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.online">
+
+    <LinearLayout
+        android:id="@+id/ol_action_bar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:layout_alignParentTop="true"
+        android:background="@color/colorPrimary"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/rlo_search_bar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone">
+
+            <com.mezdev.player.video_player.SquareFrameLayout
+                android:id="@+id/back"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:visibility="visible">
+
+                <ImageView
+                    android:id="@+id/img_back"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:padding="22dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_back" />
+            </com.mezdev.player.video_player.SquareFrameLayout>
+
+            <EditText
+                android:id="@+id/et_search"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColorHint="@color/white_back"
+                android:layout_toLeftOf="@+id/clear"
+                android:layout_toRightOf="@+id/back"
+                android:hint="@string/search"
+                android:imeOptions="actionSearch"
+                android:inputType="text"
+                android:textColor="@color/cardview_light_background"/>
+
+            <com.mezdev.player.video_player.SquareFrameLayout
+                android:id="@+id/clear"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:visibility="visible">
+
+                <ImageView
+                    android:id="@+id/img_clear"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:padding="19dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_close_black_24dp" />
+            </com.mezdev.player.video_player.SquareFrameLayout>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/lil_action_bar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/name"
+                android:textColor="#ffffff"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:visibility="visible" />
+
+            <com.mezdev.player.video_player.SquareFrameLayout
+                android:id="@+id/layout_gift"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone">
+
+                <ImageView
+                    android:id="@+id/img_gift"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:padding="19dp"
+                    android:scaleType="centerCrop"/>
+            </com.mezdev.player.video_player.SquareFrameLayout>
+
+            <com.mezdev.player.video_player.SquareFrameLayout
+                android:id="@+id/layout_search"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="visible">
+
+
+                <ImageView
+                    android:id="@+id/img_ic_search"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:padding="19dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_search" />
+            </com.mezdev.player.video_player.SquareFrameLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/rlo_screen"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/ol_action_bar"
+        android:layout_above="@+id/bottom_navigation" >
+
+        <com.jcodecraeer.xrecyclerview.XRecyclerView
+            android:id="@+id/ol_category_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:clipToPadding="false"
+            android:scrollbars="vertical" />
+
+    </RelativeLayout>
+    <LinearLayout
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/banner"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        android:padding="2dp">
+
+        <LinearLayout
+            android:id="@+id/lil_local"
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:layout_height="45dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:padding="4dp"
+                android:src="@drawable/local"
+                android:tint="@color/black"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:paddingStart="5dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:text="Local" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lil_online"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:background="@color/white">
+
+            <ImageView
+                android:id="@+id/iv_color"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:padding="4dp"
+                android:src="@drawable/online"
+                />
+
+            <TextView
+                android:id="@+id/tv_color"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:paddingStart="5dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textColor="@color/colorPrimary"
+                android:text="Online" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+    <FrameLayout
+        android:id="@+id/banner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:orientation="vertical" />
+
+</RelativeLayout>
+
+

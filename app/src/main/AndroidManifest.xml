@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.mezdev.player.video_player">
+
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.ACTION_MANAGE_OVERLAY_PERMISSION" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.INTERNAL_SYSTEM_WINDOW"
+        tools:ignore="ProtectedPermissions" />
+
+    <uses-permission android:name="com.google.android.gms.permission.AD_ID" />
+
+
+    <application
+        android:allowBackup="true"
+        android:appComponentFactory="@string/app_name"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/ic_launcher"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true"
+        tools:ignore="GoogleAppIndexingWarning"
+        tools:replace="android:appComponentFactory">
+
+        <activity
+            android:name="com.mezdev.player.video_player.activity.home"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name="com.mezdev.player.video_player.activity.play"
+            android:configChanges="keyboardHidden|orientation|screenSize" >
+        </activity>
+
+        <service
+            android:name="com.mezdev.player.video_player.Service.ServiceFloating"
+            android:exported="true"
+            tools:ignore="InnerclassSeparator" />
+
+        <activity
+            android:name="com.mezdev.player.video_player.flloting_view.permition"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.mezdev.player.video_player.activity.splash_scr"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme"/>
+
+        <activity android:name="com.mezdev.player.video_player.activity.test" />
+
+        <activity android:name="com.mezdev.player.video_player.activity.setting" />
+
+        <receiver android:name="com.mezdev.player.video_player.flloting_view.MyReceiver"
+            tools:ignore="ExportedReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.journaldev.broadcastreceiver.SOME_ACTION" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name="com.mezdev.player.video_player.activity.online"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.mezdev.player.video_player.activity.online_player"
+            android:configChanges="keyboardHidden|orientation|screenSize" />
+
+
+
+        <meta-data
+            android:name="com.google.android.gms.ads.AD_MANAGER_APP"
+            android:value="true" />
+
+
+    </application>
+
+</manifest>
